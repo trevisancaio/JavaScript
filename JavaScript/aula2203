@@ -1,0 +1,7 @@
+let numero = parseFloat(prompt("Digite o valor do lado:"))
+
+function minhafunçao(a){
+  return (a*a)
+}
+let x = minhafunçao(numero)
+console.log(x)
