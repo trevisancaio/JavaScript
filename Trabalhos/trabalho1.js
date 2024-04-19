@@ -1,30 +1,38 @@
-def calcular_imc(peso, altura):
-    return peso / (altura ** 2)
+function calcular_imc(peso, altura) {
+  return peso / (altura ** 2);
+}
 
-while True:
-    try:
-        altura = float(input("Digite sua altura em metros: "))
+while (true) {
+  try {
+    altura = parseFloat(prompt("Digite sua altura em metros: "));
 
-        if altura <= 0:
-            continue
+    if (altura <= 0) {
+      continue;
+    }
 
-        peso = float(input("Digite seu peso em quilogramas: "))
+    peso = parseFloat(prompt("Digite seu peso em quilogramas: "));
 
-        if peso <= 0:
-            continue
+    if (peso <= 0) {
+      continue;
+    }
 
-        imc = calcular_imc(peso, altura)
-        imc_arredondado = round(imc, 2)
-        print(f"Seu IMC é: {imc_arredondado}")
+    imc = calcular_imc(peso, altura);
+    imc_arredondado = round(imc, 2);
+    console.log(`Seu IMC é: ${imc_arredondado}`);
 
-        if imc_arredondado <= 18.4:
-            print("Você está abaixo do peso.")
-        elif imc_arredondado <= 24.9:
-            print("Seu peso está normal.")
-        elif imc_arredondado <= 29.9:
-            print("Você está acima do peso.")
-        elif imc_arredondado <= 34.9:
-            print("Você está com obesidade grau I.")
-        
-    except ValueError:
-        print("Por favor, insira apenas números.")
+    if (imc_arredondado <= 18.4) {
+      console.log("Você está abaixo do peso.");
+    } else if (imc_arredondado <= 24.9) {
+      console.log("Seu peso está normal.");
+    } else if (imc_arredondado <= 29.9) {
+      console.log("Você está acima do peso.");
+    } else if (imc_arredondado <= 34.9) {
+      console.log("Você está com obesidade grau I.");
+    }
+
+    break; // exit the while loop if no errors occurred
+
+  } catch (error) {
+    console.log("Por favor, insira apenas números.");
+  }
+}
